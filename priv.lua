@@ -195,7 +195,7 @@ Toggles.katoggle:OnChanged(function()
     end)
 end)
 
-combattabgroup2:AddToggle('kalltoggle',{Text = 'Enable Kill All', Default = false, Tooltip = 'Made for Wave defence, Doesnt bosses'})
+combattabgroup2:AddToggle('kalltoggle',{Text = 'Enable Kill All', Default = false, Tooltip = 'Made for Wave defence, Doesnt work on bosses'})
 :AddKeyPicker('KeyPicker2', {Default = '', SyncToggleState = true, Mode = 'Toggle', Text = 'Kill All Wave Defence', NoUI = false,})
 Toggles.kalltoggle:OnChanged(function()
     if Toggles.kalltoggle.Value == true then
@@ -237,12 +237,8 @@ Toggles.hideuitoggle:OnChanged(function()
     end
 end)
 
-exploitstabgroup2:AddToggle('getdailytoggle',{Text = 'Get Daily Rewards', Default = false, Tooltip = 'TP you to daily then away to a cave'})
-Toggles.getdailytoggle:OnChanged(function()
-    if Toggles.getdailytoggle.Value == true then
-        cDailyFunc()
-    end
-end)
+exploitstabgroup2:AddButton('Get Daily Rewards', function() cDailyFunc() end):AddTooltip('TP you to daily then away to a cave')
+
 --------------------------------------------------------------------exploits tab
 
 --GUI shit
