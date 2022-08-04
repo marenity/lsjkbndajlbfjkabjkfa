@@ -161,7 +161,7 @@ Library.ToggleKeybind = Options.MenuKeybind -- Allows you to have a custom keybi
 ThemeManager:SetLibrary(Library)
 SaveManager:SetLibrary(Library)
 SaveManager:IgnoreThemeSettings() 
---SaveManager:SetIgnoreIndexes({ 'MenuKeybind' }) 
+SaveManager:SetIgnoreIndexes({}) 
 ThemeManager:SetFolder('Priv')
 SaveManager:SetFolder('Priv/game')
 SaveManager:BuildConfigSection(Tabs['UI Settings']) 
@@ -180,7 +180,7 @@ end)
 ]]
 
 --------------------------------------------------------------------combat tab
-combattabgroup:AddToggle('katoggle',{Text = 'Enable Kill All', Default = false, Tooltip = 'Kills all mobs, Cant kill bosses or mini bosses'})
+combattabgroup:AddToggle('katoggle',{Text = 'Enable Kill Aura', Default = false, Tooltip = 'Kills all mobs, Cant kill bosses or mini bosses'})
 :AddKeyPicker('KeyPicker', {Default = '', SyncToggleState = true, Mode = 'Toggle', Text = 'Kill All', NoUI = false,})
 combattabgroup:AddSlider('karangeslide',{Text = 'Range', Default = 0, Min = 0, Max = 50, Rounding = 0, Compact = false,})
 Toggles.katoggle:OnChanged(function()
