@@ -13,57 +13,6 @@ getgenv().kAll2 = false
 --GUI shit
 --githubs
 
-local function createWall(cf, sz)
-      local part = Instance.new("Part")
-      game:GetService("CollectionService"):AddTag(part, "RayWhitelist")
-      part.Size = sz
-      part.CFrame = cf
-      part.Name = "Part"
-      part.Anchored = true
-      part.Transparency = 0
-      part.CanCollide = true
-      part.Parent = workspace
-      return part
-end
-
-function removearenawalls()
-    createWall(CFrame.new(700.780151, 1.08747101, -505.499756, 1, 0, 0, 0, 1, 0, 0, 0, 1),Vector3.new(346, 1, 351))
-    createWall(CFrame.new(531.63446, 23.4773884, -555.873901, 0.965907097, -0, -0.25888893, 0, 1, -0, 0.25888893, 0, 0.965907097),Vector3.new(3, 61, 56))
-    createWall(CFrame.new(526.166138, 25.7228622, -509.606781, 1, 0, 0, 0, 1, 0, 0, 0, 1),Vector3.new(3, 61, 56))
-    createWall(CFrame.new(548.037903, 22.4773922, -433.967896, 0.866051912, 0, 0.499954134, 0, 1, 0, -0.499954134, 0, 0.866051912),Vector3.new(3, 61, 56))
-    createWall(CFrame.new(570.982849, 21.4181786, -401.563354, 0.707068086, 0, 0.707145572, 0, 1, 0, -0.707145572, 0, 0.707068086),Vector3.new(3, 61, 56))
-    createWall(CFrame.new(615.836792, 22.8858471, -368.295319, 0.500045776, 0, 0.865998983, 0, 1, 0, -0.865998983, 0, 0.500045776),Vector3.new(3, 61, 56))
-    createWall(CFrame.new(655.470581, 23.4773884, -351.075867, 0.25875926, 0, 0.965941846, 0, 1, 0, -0.965941846, 0, 0.25875926),Vector3.new(3, 61, 56))
-    createWall(CFrame.new(550.30542, 23.7891712, -598.976196, 0.866051912, -0, -0.499954134, 0, 1, -0, 0.499954134, 0, 0.866051912),Vector3.new(3, 61, 56))
-    createWall(CFrame.new(579.393799, 23.692522, -636.764038, 0.707068086, -0, -0.707145572, 0, 1, -0, 0.707145572, 0, 0.707068086),Vector3.new(3, 61, 56))
-    createWall(CFrame.new(596.496643, 23.5105915, -653.972412, 0.500045776, -0, -0.865998983, 0, 1, -0, 0.865998983, 0, 0.500045776),Vector3.new(3, 61, 56))
-    createWall(CFrame.new(641.417297, 23.6924877, -676.86145, 0.25875926, -0, -0.965941846, 0, 1, -0, 0.965941846, 0, 0.25875926),Vector3.new(3, 61, 56))
-    createWall(CFrame.new(686.062866, 23.1201954, -686.697998, -1.1920929e-07, -0, -1.00000012, 0, 1, -0, 1.00000012, 0, -1.1920929e-07),Vector3.new(12, 61, 56))
-    createWall(CFrame.new(727.819275, 23.7891636, -681.306458, -0.25875926, 0, -0.965941846, 0, 1, 0, 0.965941846, 0, -0.25875926),Vector3.new(3, 61, 56))
-    createWall(CFrame.new(778.287292, 23.692482, -663.834351, -0.500045776, 0, -0.865998983, 0, 1, 0, 0.865998983, 0, -0.500045776),Vector3.new(3, 61, 56))
-    createWall(CFrame.new(813.103943, 23.6924744, -637.937378, -0.707068563, 0, -0.707145572, 0, 1, 0, 0.707145572, 0, -0.707068563),Vector3.new(3, 61, 56))
-    createWall(CFrame.new(841.042297, 23.6924744, -603.883423, -0.86605227, 0, -0.499954134, 0, 1, 0, 0.499954134, 0, -0.86605227),Vector3.new(3, 61, 56))
-    createWall(CFrame.new(857.193359, 23.6924667, -568.49408, -0.965907454, 0, -0.25888893, 0, 1, 0, 0.25888893, 0, -0.965907454),Vector3.new(3, 61, 56))
-    createWall(CFrame.new(865.673096, 23.6924496, -529.623108, -1, 0, 0, 0, 1, 0, 0, 0, -1),Vector3.new(3, 61, 56))
-    createWall(CFrame.new(863.366272, 24.7891579, -485.24762, -0.965929747, 0, 0.258804798, 0, 1, 0, -0.258804798, 0, -0.965929747),Vector3.new(3, 61, 56))
-    createWall(CFrame.new(848.869324, 24.8770714, -438.6922, -0.86605227, 0, 0.499954134, 0, 1, 0, -0.499954134, 0, -0.86605227),Vector3.new(3, 61, 56))
-    createWall(CFrame.new(827.089111, 22.9181671, -405.456207, -0.707068563, 0, 0.707145572, 0, 1, 0, -0.707145572, 0, -0.707068563),Vector3.new(3, 61, 56))
-    createWall(CFrame.new(791.403137, 23.6924515, -375.83905, -0.500045776, 0, 0.865998983, 0, 1, 0, -0.865998983, 0, -0.500045776),Vector3.new(3, 61, 56))
-    createWall(CFrame.new(751.885193, 22.8770199, -354.606323, -0.25875926, 0, 0.965941846, 0, 1, 0, -0.965941846, 0, -0.25875926),Vector3.new(3, 61, 56))
-    createWall(CFrame.new(705.660889, 24.7889099, -347.466583, -1.1920929e-07, 0, 1.00000012, 0, 1, 0, -1.00000012, 0, -1.1920929e-07),Vector3.new(3, 61, 56))
-    createWall(CFrame.new(532.647339, 25.1737785, -472.444366, 0.965907097, 0, 0.25888893, 0, 1, 0, -0.25888893, 0, 0.965907097),Vector3.new(3, 61, 56))
-    
-    for _,v in pairs(game:GetService("Workspace"):GetDescendants()) do
-        if string.match(v.Name, "Arena") then
-           v:Remove()
-        end
-    
-end
-
-
-
-end
-
 function killaura()
     for i,v in pairs (game:GetService("Workspace"):GetDescendants()) do
         function kLoop()
@@ -155,6 +104,7 @@ local repo = 'https://raw.githubusercontent.com/wally-rblx/LinoriaLib/main/'
 local Library = loadstring(game:HttpGet(repo .. 'Library.lua'))()
 local ThemeManager = loadstring(game:HttpGet(repo .. 'addons/ThemeManager.lua'))()
 local SaveManager = loadstring(game:HttpGet(repo .. 'addons/SaveManager.lua'))()
+local dqmaps = loadstring(game:HttpGet('https://raw.githubusercontent.com/marenity/dqlowqualitymaps/main/maps.lua'))()
 --githubs
 
 local Window = Library:CreateWindow({
@@ -279,7 +229,7 @@ exploitstabgroup3
     :AddButton('Remove Models', function() fpsBoost2() end):AddTooltip('Removes map models also walk thru walls, have to leave game to fix')
 
 exploitstabgroup3
-    :AddButton('Remove Wave Defence Walls', function() removearenawalls() end):AddTooltip('Only works in Wave Defence')
+    :AddButton('Remove Wave Defence Walls', function() dqmaps:removearenawalls() end):AddTooltip('Only works in Wave Defence')
 
 exploitstabgroup2:AddToggle('hideuitoggle',{Text = 'Hide Your Info', Default = false, Tooltip = 'Hides everything top left'})
 Toggles.hideuitoggle:OnChanged(function()
