@@ -181,7 +181,7 @@ end)
 
 --------------------------------------------------------------------combat tab
 combattabgroup:AddToggle('katoggle',{Text = 'Enable Kill Aura', Default = false, Tooltip = 'Kills all mobs, Cant kill bosses or mini bosses'})
-:AddKeyPicker('KeyPicker', {Default = '', SyncToggleState = true, Mode = 'Toggle', Text = 'Kill All', NoUI = false,})
+:AddKeyPicker('KeyPicker1', {Default = '', SyncToggleState = true, Mode = 'Toggle', Text = 'Kill All', NoUI = false,})
 combattabgroup:AddSlider('karangeslide',{Text = 'Range', Default = 0, Min = 0, Max = 50, Rounding = 0, Compact = false,})
 Toggles.katoggle:OnChanged(function()
     Options.karangeslide:OnChanged(function()
