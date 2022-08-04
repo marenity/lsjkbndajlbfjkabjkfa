@@ -181,7 +181,7 @@ end)
 
 --------------------------------------------------------------------combat tab
 combattabgroup:AddToggle('katoggle',{Text = 'Enable Kill Aura', Default = false, Tooltip = 'Kills all mobs, Cant kill bosses or mini bosses'})
-:AddKeyPicker('KeyPicker1', {Default = '', SyncToggleState = true, Mode = 'Toggle, Always, Hold', Text = 'Kill All', NoUI = false,})
+:AddKeyPicker('KeyPicker1', {Default = '', SyncToggleState = true, Mode = 'Toggle', Text = 'Kill All', NoUI = false,})
 combattabgroup:AddSlider('karangeslide',{Text = 'Range', Default = 0, Min = 0, Max = 50, Rounding = 0, Compact = false,})
 Toggles.katoggle:OnChanged(function()
     Options.karangeslide:OnChanged(function()
@@ -196,7 +196,7 @@ Toggles.katoggle:OnChanged(function()
 end)
 
 combattabgroup2:AddToggle('kalltoggle',{Text = 'Enable Kill All', Default = false, Tooltip = 'Made for Wave defence, Doesnt work on bosses'})
-:AddKeyPicker('KeyPicker2', {Default = '', SyncToggleState = true, Mode = 'Toggle, Always, Hold', Text = 'Kill All Wave Defence', NoUI = false,})
+:AddKeyPicker('KeyPicker2', {Default = '', SyncToggleState = true, Mode = 'Toggle', Text = 'Kill All Wave Defence', NoUI = false,})
 Toggles.kalltoggle:OnChanged(function()
     if Toggles.kalltoggle.Value == true then
         getgenv().kAll2 = true
