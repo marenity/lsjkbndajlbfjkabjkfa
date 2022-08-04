@@ -161,7 +161,7 @@ Library.ToggleKeybind = Options.MenuKeybind -- Allows you to have a custom keybi
 ThemeManager:SetLibrary(Library)
 SaveManager:SetLibrary(Library)
 SaveManager:IgnoreThemeSettings() 
-SaveManager:SetIgnoreIndexes({ 'MenuKeybind' }) 
+--SaveManager:SetIgnoreIndexes({ 'MenuKeybind' }) 
 ThemeManager:SetFolder('Priv')
 SaveManager:SetFolder('Priv/game')
 SaveManager:BuildConfigSection(Tabs['UI Settings']) 
