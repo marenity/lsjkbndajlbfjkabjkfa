@@ -5,6 +5,13 @@ local userinput = game:GetService("UserInputService")
 local localplayer = game.Players.LocalPlayer
 
 --getgenv().InfiniteJumpEnabled = false
+getgenv().main = {}
+    
+for i,v in next, getgc(true) do
+    if type(v) == "table" and rawget(v, "setbasewalkspeed") then
+        main.test = v
+    end
+end
 
 local camera = game:GetService("Workspace").CurrentCamera
 local mouse = game.Players.LocalPlayer:GetMouse()
@@ -121,7 +128,7 @@ local Tabs = {
     --Combat = Window:AddTab('Combat'),
     ESP = Window:AddTab('Visuals'),
     --Misc = Window:AddTab('Misc'),
-    --Exploits = Window:AddTab('Exploits'),
+    Exploits = Window:AddTab('Exploits'),
     ['UI Settings'] = Window:AddTab('UI Settings'),
 }
 
@@ -130,7 +137,7 @@ local Tabs = {
 --ESP.FaceCamera = true
 
 --------------------------------------------------------------------UI groupboxes
---local exploitstabgroup = Tabs.Exploits:AddLeftGroupbox('Movement')
+local exploitstabgroup = Tabs.Exploits:AddLeftGroupbox('Movement')
 local MenuGroup = Tabs['UI Settings']:AddLeftGroupbox('Menu')
 local ToggleMenuGroup = Tabs['UI Settings']:AddRightGroupbox('Menu Extras')
 local espmenugroup = Tabs.ESP:AddLeftGroupbox('ESP')
@@ -247,10 +254,13 @@ end)
 --------------------------------------------------------------------Visuals tab
 
 --------------------------------------------------------------------exploits tab
---[[
-exploitstabgroup:AddSlider('noacspeedhack',{Text = 'No Anti-Cheat Speed Hack', Default = 16, Min = 16, Max = 350, Rounding = 0, Compact = false,})
-Options.noacspeedhack:OnChanged(function() localplayer.Character.Humanoid.WalkSpeed = Options.noacspeedhack.Value end)
+exploitstabgroup:AddSlider('noacspeedhack',{Text = 'Speed Hack', Default = 12.5, Min = 12.5, Max = 50, Rounding = 0, Compact = false,})
+Options.noacspeedhack:OnChanged(function()
+    val = Options.noacspeedhack.Value
+    main.test:setbasewalkspeed(val)
+end)
 
+--[[
 exploitstabgroup:AddToggle('enablepfspeed', {Text = 'Enables Speed Hack', Default = false, Tooltip = 'Enables the speed hack'})
 exploitstabgroup:AddSlider('phantomforcesspeedhack',{Text = 'Phantom Forces Speed Hack', Default = 16, Min = 16, Max = 100, Rounding = 0, Compact = false,})
 Options.phantomforcesspeedhack:OnChanged(function() 
