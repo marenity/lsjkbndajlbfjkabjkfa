@@ -41,7 +41,7 @@ local Tabs = {
 local exploitstabgroup = Tabs.Exploits:AddLeftGroupbox('Movement')
 local MenuGroup = Tabs['UI Settings']:AddLeftGroupbox('Menu')
 local ToggleMenuGroup = Tabs['UI Settings']:AddRightGroupbox('Menu Extras')
-local espmenugroup = Tabs.ESP:AddLeftGroupbox('ESP')
+--local espmenugroup = Tabs.ESP:AddLeftGroupbox('ESP')
 --------------------------------------------------------------------UI groupboxes
 
 --------------------------------------------------------------------UI settings tab
