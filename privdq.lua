@@ -100,6 +100,12 @@ function fpsBoost2()
     end)
 end
 
+function speedhacks()
+    spawn (function()
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Options.noacspeedhack.Value
+    end)
+end
+
 local repo = 'https://raw.githubusercontent.com/wally-rblx/LinoriaLib/main/'
 local Library = loadstring(game:HttpGet(repo .. 'Library.lua'))()
 local ThemeManager = loadstring(game:HttpGet(repo .. 'addons/ThemeManager.lua'))()
@@ -217,7 +223,7 @@ exploitstabgroup:AddSlider('noacspeedhack',{Text = 'Speed Hack Value', Default =
 Toggles.speedenable:OnChanged(function()
     Options.noacspeedhack:OnChanged(function()
         if Toggles.speedenable.Value then
-            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Options.noacspeedhack.Value
+            speedhacks()
         elseif Toggles.speedenable.Value == false then
             game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
         end
