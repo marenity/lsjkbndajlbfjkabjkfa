@@ -2028,16 +2028,16 @@ function Library:CreateWindow(WindowTitle)
         BackgroundColor3 = 'MainColor';
         BorderColor3 = 'AccentColor';
     });
-    --[[
+    
     local WindowLabel = Library:CreateLabel({
-        Position = UDim2.new(0, 7, 0, 0);
-        Size = UDim2.new(0, 0, 0, 25);
-        Text = WindowTitle or '';
-        TextXAlignment = Enum.TextXAlignment.Left;
+        --Position = UDim2.new(0, 7, 0, 0);
+        --Size = UDim2.new(0, 0, 0, 25);
+        --Text = WindowTitle or '';
+        --TextXAlignment = Enum.TextXAlignment.Left;
         ZIndex = 1;
-        Parent = Inner;
+        --Parent = Inner;
     });
-    ]]
+    
     local MainSectionOuter = Library:Create('Frame', {
         BackgroundColor3 = Library.BackgroundColor;
         BorderColor3 = Library.OutlineColor;
