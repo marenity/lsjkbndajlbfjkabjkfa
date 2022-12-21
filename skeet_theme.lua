@@ -28,11 +28,11 @@ local Library = {
 
     HudRegistry = {};
 
-    FontColor = Color3.fromRGB(255, 255, 255);
-    MainColor = Color3.fromRGB(0, 255, 0); --green
-    BackgroundColor = Color3.fromRGB(255, 255, 255); --white
-    AccentColor = Color3.fromRGB(255, 0, 0); --red
-    OutlineColor = Color3.fromRGB(0, 0, 255); --blue
+    FontColor = Color3.fromRGB(117, 117, 117);
+    MainColor = Color3.fromRGB(23, 23, 23);
+    BackgroundColor = Color3.fromRGB(20, 20, 20);
+    AccentColor = Color3.fromRGB(124, 166, 17);
+    OutlineColor = Color3.fromRGB(35, 35, 35);
 
     Black = Color3.new(0, 0, 0);
 
@@ -1355,7 +1355,7 @@ do
         -- thank you nicemike40 :)
 
         local function Update()
-            local PADDING = 5
+            local PADDING = 2
             local reveal = Container.AbsoluteSize.X
 
             if not Box:IsFocused() or Box.TextBounds.X <= reveal - 2 * PADDING then
@@ -1660,10 +1660,8 @@ do
                 return math.floor(Value);
             end;
 
-            local Str = Value .. '';
-            local Dot = Str:find('%.');
-
-            return Dot and tonumber(Str:sub(1, Dot + Slider.Rounding)) or Value;
+    
+            return tonumber(string.format('%.' .. Slider.Rounding .. 'f', Value))
         end;
 
         function Slider:GetValueFromXOffset(X)
@@ -2093,20 +2091,39 @@ do
         Dropdown:SetValues();
         Dropdown:Display();
 
+        local Defaults = {}
+
         if type(Info.Default) == 'string' then
-            Info.Default = table.find(Dropdown.Values, Info.Default)
+            local Idx = table.find(Dropdown.Values, Info.Default)
+            if Idx then
+                table.insert(Defaults, Idx)
+            end
+        elseif type(Info.Default) == 'table' then
+            for _, Value in next, Info.Default do
+                local Idx = table.find(Dropdown.Values, Value)
+                if Idx then
+                    table.insert(Defaults, Idx)
+                end
+            end
+        elseif type(Info.Default) == 'number' and Dropdown.Values[Info.Default] ~= nil then
+            table.insert(Defaults, Info.Default)
         end
 
-        if Info.Default then
-            if Info.Multi then
-                Dropdown.Value[Dropdown.Values[Info.Default]] = true;
-            else
-                Dropdown.Value = Dropdown.Values[Info.Default];
-            end;
+        if next(Defaults) then
+            for i = 1, #Defaults do
+                local Index = Defaults[i]
+                if Info.Multi then
+                    Dropdown.Value[Dropdown.Values[Index]] = true
+                else
+                    Dropdown.Value = Dropdown.Values[Index];
+                end
+
+                if (not Info.Multi) then break end
+            end
 
             Dropdown:SetValues();
             Dropdown:Display();
-        end;
+        end
 
         Groupbox:AddBlank(Info.BlankSize or 5);
         Groupbox:Resize();
@@ -2401,8 +2418,7 @@ function Library:CreateWindow(...)
         Tabs = {};
     };
 
-    --outermost outline color
-    local Outer = Library:Create('Frame', { 
+    local Outer = Library:Create('Frame', {
         AnchorPoint = Config.AnchorPoint,
         BackgroundColor3 = Color3.new(0, 0, 0);
         BorderSizePixel = 0;
